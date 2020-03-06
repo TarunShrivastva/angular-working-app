@@ -20,12 +20,21 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/main/img/core-img/favicon.ico"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/main",
               "src/styles.css"
-            ],
-            "scripts": []
+              ],
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./src/main/js/bootstrap/popper.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./src/main/js/plugins/plugins.js",
+              "./src/main/js/active.js"
+            ]
           },
           "configurations": {
             "production": {
