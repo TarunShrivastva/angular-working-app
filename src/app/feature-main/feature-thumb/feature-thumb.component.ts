@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
     templateUrl: './feature-thumb.component.html',
 })
 
-export class FeatureThumbComponent {
-
-}
+export class FeatureThumbComponent {}
