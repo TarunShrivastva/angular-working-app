@@ -10,6 +10,12 @@ import { HomeComponent } from './home/home.component';
 import { FeatureMainComponent } from './feature-main/feature-main.component';
 import { FeatureComponent } from './feature-main/feature/feature.component';
 import { FeatureThumbComponent } from './feature-main/feature-thumb/feature-thumb.component';
+import { PopularComponent } from './popular/popular.component';
+import { PopularPostComponent } from './popular/popular-post/popular-post.component';
+import { PopularThumbComponent } from './popular/popular-thumb/popular-thumb.component';
+import { EditorialPostComponent } from './editorial-main/editorial-post/editorial-post.component';
+import { EditorialThumbComponent } from './editorial-main/editorial-thumb/editorial-thumb.component';
+import { EditorialComponent } from './editorial-main/editorial.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +26,12 @@ import { FeatureThumbComponent } from './feature-main/feature-thumb/feature-thum
     FeatureMainComponent,
     FeatureComponent,
     FeatureThumbComponent,
+    PopularComponent,
+    PopularPostComponent,
+    PopularThumbComponent,
+    EditorialComponent,
+    EditorialPostComponent,
+    EditorialThumbComponent,
     FooterComponent
   ],
   imports: [

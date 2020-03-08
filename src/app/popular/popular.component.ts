@@ -1,10 +1,8 @@
 import { Component } from "@angular/core"
 
 @Component({
-    selector: "popular-app",
+    selector: "popular-main",
     templateUrl: "./popular.component.html"
 })
 
-export class PopularComponent {
-
-}
+export class PopularComponent {}
