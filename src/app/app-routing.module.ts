@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PostComponent } from './post/post.component';
-import { PopularComponent } from './popular/popular.component';
 import { HomeComponent } from './home/home.component';
+import { CategoryMainComponent } from './category-main/category-main.component';
 
 const routes: Routes = [
-  { path: 'home' ,component: HomeComponent },
+  { path: '' , component: HomeComponent },
+  { path: 'category' , component: CategoryMainComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' }
+  
 ];
 
 @NgModule({
