@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PostComponent } from './post/post.component';
-import { PopularComponent } from './popular/popular.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: 'home' ,component: HomeComponent },
+  { path: '' ,component: HomeComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' }
 ];
 
