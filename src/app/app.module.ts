@@ -16,9 +16,6 @@ import { PopularThumbComponent } from './popular-main/popular-thumb/popular-thum
 import { EditorialPostComponent } from './editorial-main/editorial-post/editorial-post.component';
 import { EditorialThumbComponent } from './editorial-main/editorial-thumb/editorial-thumb.component';
 import { EditorialComponent } from './editorial-main/editorial.component';
-import { CategoryMainComponent } from './category-main/category-main.component';
-import { CategoryContentComponent } from './category-main/category-content/category-content.component';
-import { CategorySideComponent } from './category-main/category-side-content/category-side-content';
 
 @NgModule({
   declarations: [
@@ -35,9 +32,6 @@ import { CategorySideComponent } from './category-main/category-side-content/cat
     EditorialComponent,
     EditorialPostComponent,
     EditorialThumbComponent,
-    CategoryMainComponent,
-    CategoryContentComponent,
-    CategorySideComponent,
     FooterComponent
   ],
   imports: [

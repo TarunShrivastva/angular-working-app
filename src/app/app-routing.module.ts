@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { CategoryMainComponent } from './category-main/category-main.component';
 
 const routes: Routes = [
-  { path: '' , component: HomeComponent },
-  { path: 'category' , component: CategoryMainComponent },
+  { path: '' ,component: HomeComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' }
   
 ];
