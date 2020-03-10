@@ -17,7 +17,7 @@ import { EditorialPostComponent } from './editorial-main/editorial-post/editoria
 import { EditorialThumbComponent } from './editorial-main/editorial-thumb/editorial-thumb.component';
 import { EditorialComponent } from './editorial-main/editorial.component';
 import { CategoryMainComponent } from './category-main/category-main.component';
-import { CategoryPostComponent } from './category-main/categet-post/categet-post.component';
+import { CategoryPostComponent } from './category-main/category-post/category-post.component';
 import { CommentComponent } from './comment/comment.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { LatestSidePostComponent } from './category-main/latest-side-post/latest-side-post.component';
