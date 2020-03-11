@@ -16,6 +16,7 @@ import { PopularThumbComponent } from './popular-main/popular-thumb/popular-thum
 import { EditorialPostComponent } from './editorial-main/editorial-post/editorial-post.component';
 import { EditorialThumbComponent } from './editorial-main/editorial-thumb/editorial-thumb.component';
 import { EditorialComponent } from './editorial-main/editorial.component';
+import { CategoryMasterComponent } from './category-master/category-master.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EditorialComponent } from './editorial-main/editorial.component';
     EditorialComponent,
     EditorialPostComponent,
     EditorialThumbComponent,
-    FooterComponent
+    FooterComponent,
+    CategoryMasterComponent
   ],
   imports: [
     BrowserModule,
