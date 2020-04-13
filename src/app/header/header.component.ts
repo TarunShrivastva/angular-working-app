@@ -18,20 +18,11 @@ export class HeaderComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.getNavBarItems();
-    const content_id = 1;
-    this.getArticlesByContent(+content_id);
   }
 
   getNavBarItems(): void {
     this.articlesService.getNavBarItems().subscribe((response) => {
       this.menus = response.memuItems;
-    });
-  }
-
-  getArticlesByContent(content_id:number): void {
-    this.articlesService.getArticlesByContent(content_id).subscribe((response) => {
-      this.articles = response.data;
-      console.log(this.articles);
     });
   }
 }

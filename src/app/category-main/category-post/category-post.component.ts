@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from '../../services/articles.service';
 import { Article } from '../../interfaces/article.model';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'category-post',
@@ -13,19 +14,22 @@ export class CategoryPostComponent implements OnInit {
 
   articles: Article[];
 
-  constructor(private ArticlesService: ArticlesService ) { }
+  constructor(private articlesService: ArticlesService, private router:Router ) { }
 
   ngOnInit() {
-    this.getArticles();
+    const content_id = 1;
+    this.getArticlesByContent(+content_id);
   }
 
   onSelect(article: Article): void {
     this.selectedArticle = article;
   }
 
-  getArticles(): void {
-    this.ArticlesService.getArticles()
-        .subscribe(articles => this.articles = articles);
+  getArticlesByContent(content_id:number): void {
+    this.articlesService.getArticlesByContent(content_id).subscribe((response) => {
+      this.articles = response.data;
+      console.log(this.articles);
+    });
   }
 
 }
