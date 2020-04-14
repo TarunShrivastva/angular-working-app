@@ -13,4 +13,6 @@ export class EnvironmentService {
   get apiUrl (): string { return environment.api_url; }
 
   get firUrl (): string { return environment.fir_url; }
+
+  get imageUrl(): string { return environment.image; }
 }

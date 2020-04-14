@@ -62,13 +62,13 @@
             <div class="classynav">
               <ul>
                 <li *ngFor="let menu of menus" [ngClass]="{'cn-dropdown-item' : menus.length > 0}"><a
-                    href="#">{{ menu.title }}</a>
+                  [routerLink]="[menu.title]">{{ menu.title }}</a>
                   <ul *ngIf="menu.child_module.length > 0" class="dropdown">
                     <li *ngFor="let category of menu.child_module" [ngClass]="{'cn-dropdown-item' : menus.length > 0}">
-                      <a href="#">{{ category.title }}</a>
+                      <a [routerLink]="category.child_child_module.length > 0? [menu.title] : [menu.title, category.title]">{{ category.title }}</a>
                       <ul *ngIf="category.child_child_module.length > 0" class="dropdown">
                         <li *ngFor="let subcategory of category.child_child_module"><a
-                            href="index.html">{{ subcategory.title }}</a></li>
+                          [routerLink]="[menu.title, subcategory.title]">{{ subcategory.title }}</a></li>
                       </ul>
                     </li>
                   </ul>

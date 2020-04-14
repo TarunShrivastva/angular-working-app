@@ -3,7 +3,7 @@ import { Article } from '../interfaces/article.model';
 import { Observable } from 'rxjs';
 import { ApiService } from '../common-services/api.service';
 import { Menu } from '../interfaces/menu.model';
-
+import { Pagination } from  '../interfaces/pagination.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class ArticlesService {
     return this.api.get('get_menu_items');
   }
 
-  getArticlesByContent(content_id): Observable<any[]> {
+  getArticlesByContent(content_id): Observable<Pagination> {
     return this.api.get('articles/content/'+ content_id);
   }
 }
