@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CategoryMainComponent } from './category-main/category-main.component';
 import { ContentMainComponent } from './content-main/content-main.component';
+import { ArticleComponent } from './article/article.component';
 
 const routes: Routes = [
-  { path: '' ,component: HomeComponent },
-  { path: ':content' ,component: ContentMainComponent },
-  { path: ':content/:category' ,component: CategoryMainComponent },
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
+  { path: ':content', component: ContentMainComponent },
+  { path: ':content/:category', component: CategoryMainComponent },
+  { path: ':content/:category/:sluged_title', component: ArticleComponent },
+  { path: '', redirectTo: '/', pathMatch: 'full' }
   // { path: '**', component: PageNotFoundComponent }
 ];
 

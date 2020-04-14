@@ -27,7 +27,7 @@
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/main",
               "src/styles.css"
-              ],
+            ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
               "./src/main/js/bootstrap/popper.min.js",
@@ -140,5 +140,8 @@
       }
     }
   },
-  "defaultProject": "myapp"
+  "defaultProject": "myapp",
+  "cli": {
+    "analytics": "df23aad0-00a3-4a44-8b9c-a81916e4087e"
+  }
 }

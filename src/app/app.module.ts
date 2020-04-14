@@ -26,6 +26,10 @@ import { LatestSidePostComponent } from "./latest-side-post/latest-side-post.com
 import { PopularSidePostComponent } from "./popular-side-post/popular-side-post.component";
 import { ContentPostComponent } from './content-main/content-post/content-post.component';
 import { ContentMainComponent } from './content-main/content-main.component';
+import { ArticleComponent } from './article/article.component';
+import { MainContentComponent } from './article/main-content/main-content.component';
+import { CommentListComponent } from './article/comment-list/comment-list.component';
+import { AddCommentComponent } from './article/add-comment/add-comment.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +55,10 @@ import { ContentMainComponent } from './content-main/content-main.component';
     NewsletterComponent,
     ContentMainComponent,
     ContentPostComponent,
+    ArticleComponent,
+    MainContentComponent,
+    CommentListComponent,
+    AddCommentComponent,
   ],
   imports: [
     BrowserModule,

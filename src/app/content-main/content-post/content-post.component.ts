@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from "../../services/articles.service";
 import { Article } from "../../interfaces/article.model";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute, NavigationEnd } from "@angular/router";
 import { Pagination } from 'src/app/interfaces/pagination.model';
 import { EnvironmentService } from 'src/app/common-services/environment.service';
 
@@ -19,22 +19,27 @@ export class ContentPostComponent implements OnInit {
   constructor(
     private articlesService: ArticlesService,
     private router: Router,
+    private route: ActivatedRoute,
     private envService: EnvironmentService
-  ) { }
+  ) {
+    router.events.subscribe((val) => {
+      if(val instanceof NavigationEnd)
+        this.getArticlesByContentType(val.url.replace('/',''));
+    });
+  }
 
   ngOnInit() {
-    console.log(history.state.data);
-    const content_id = 1;
-    this.getArticlesByContent(+content_id);
+    const content_type = this.route.snapshot.paramMap.get("content");
+    this.getArticlesByContentType(content_type);
   }
 
   onSelect(article: Article): void {
     this.selectedArticle = article;
   }
 
-  getArticlesByContent(content_id: number): void {
+  getArticlesByContentType(content_type: string): void {
     this.articlesService
-      .getArticlesByContent(content_id)
+      .getArticlesByContentType(content_type)
       .subscribe((response:Pagination) => {
         this.articles = response.data;
       });

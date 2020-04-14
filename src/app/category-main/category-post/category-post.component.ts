@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ArticlesService } from "../../services/articles.service";
 import { Article } from "../../interfaces/article.model";
-import { Router, ActivatedRoute } from "@angular/router";
+import { Router, ActivatedRoute, NavigationEnd } from "@angular/router";
 import { Pagination } from 'src/app/interfaces/pagination.model';
 import { EnvironmentService } from 'src/app/common-services/environment.service';
 
@@ -15,29 +15,36 @@ export class CategoryPostComponent implements OnInit {
   articles: Article[];
   p: number = 1;
   content:any;
+  category:any;
 
   constructor(
     private articlesService: ArticlesService,
     private router: Router,
     private route: ActivatedRoute,
     private envService: EnvironmentService
-  ) {}
+  ) {
+    router.events.subscribe((val) => {
+      if(val instanceof NavigationEnd){
+        const content_type = val.url.split('/')[1];
+        const category_type = val.url.split('/')[2];
+        this.getArticlesByContentCategoryType(content_type, category_type);
+      }
+    });
+  }
 
   ngOnInit() {
-    // this.content = this.route.snapshot.paramMap.get("category");
-    this.content = this.route
-      .data
-      .subscribe(v => console.log(v));
-    // this.getArticlesByContent(+content_id);
+    this.content = this.route.snapshot.paramMap.get("content");
+    this.category = this.route.snapshot.paramMap.get("category");
+    this.getArticlesByContentCategoryType(this.content, this.category);
   }
 
   onSelect(article: Article): void {
     this.selectedArticle = article;
   }
 
-  getArticlesByContent(content_id: number): void {
+  getArticlesByContentCategoryType(content_type: string, category_type: string): void {
     this.articlesService
-      .getArticlesByContent(content_id)
+      .getArticlesByContentCategoryType(content_type, category_type)
       .subscribe((response:Pagination) => {
         this.articles = response.data;
       });

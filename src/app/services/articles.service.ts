@@ -21,7 +21,11 @@ export class ArticlesService {
     return this.api.get('get_menu_items');
   }
 
-  getArticlesByContent(content_id): Observable<Pagination> {
-    return this.api.get('articles/content/'+ content_id);
+  getArticlesByContentType(content_type:string): Observable<Pagination> {
+    return this.api.get('articles/content/'+ content_type);
+  }
+
+  getArticlesByContentCategoryType(content_type:string, category_type:string ): Observable<Pagination> {
+    return this.api.get('articles/content/'+ content_type +'/category/'+ category_type);
   }
 }
