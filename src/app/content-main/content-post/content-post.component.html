@@ -1,9 +1,11 @@
 <div class="blog-posts-area">
 
   <!-- Single Featured Post -->
-  <div *ngFor="let article of articles | paginate: { itemsPerPage: 10, currentPage: p }" class="single-blog-post featured-post mb-30">
+  <div *ngFor="let article of articles | paginate: { itemsPerPage: 10, currentPage: p }"
+    class="single-blog-post featured-post mb-30">
     <div class="post-thumb">
-      <a [routerLink]="[ article.category | lowercase , article.alias ]"><img src="{{ envService.imageUrl }}/{{ article.image }}" alt=""></a>
+      <a [routerLink]="[ article.category | lowercase , article.alias ]"><img
+          src="{{ envService.imageUrl }}/{{ article.image }}" alt=""></a>
     </div>
     <div class="post-data">
       <a [routerLink]="[ article.content | lowercase ]" class="post-catagory">{{ article.content }}</a>
@@ -23,10 +25,11 @@
   </div>
 </div>
 
-<nav aria-label="Page navigation example">
+<nav *ngIf="articles.length > 0" aria-label="Page navigation example">
   <ul class="pagination mt-50">
     <li class="page-item">
-      <pagination-controls class="{page-link : true}" (pageChange)="p = $event; pageChanged($event)"></pagination-controls>
+      <pagination-controls class="{page-link : true}" (pageChange)="p = $event; pageChanged($event)">
+      </pagination-controls>
     </li>
   </ul>
 </nav>

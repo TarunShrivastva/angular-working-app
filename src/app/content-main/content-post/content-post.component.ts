@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import { ArticlesService } from "../../services/articles.service";
 import { Article } from "../../interfaces/article.model";
 import { Router, ActivatedRoute, NavigationEnd } from "@angular/router";
-import { Pagination } from 'src/app/interfaces/pagination.model';
-import { EnvironmentService } from 'src/app/common-services/environment.service';
+import { Pagination } from "src/app/interfaces/pagination.model";
+import { EnvironmentService } from "src/app/common-services/environment.service";
 
 @Component({
-  selector: 'content-post',
-  templateUrl: './content-post.component.html',
-  styleUrls: ['./content-post.component.css']
+  selector: "content-post",
+  templateUrl: "./content-post.component.html",
+  styleUrls: ["./content-post.component.css"],
 })
 export class ContentPostComponent implements OnInit {
-
   selectedArticle: Article;
-  articles: Article[];
+  articles: Article[] = [];
   p: number = 1;
 
   constructor(
@@ -22,25 +21,23 @@ export class ContentPostComponent implements OnInit {
     private route: ActivatedRoute,
     private envService: EnvironmentService
   ) {
-    router.events.subscribe((val) => {
-      if(val instanceof NavigationEnd)
-        this.getArticlesByContentType(val.url.replace('/',''));
-    });
-  }
-
-  ngOnInit() {
     const content_type = this.route.snapshot.paramMap.get("content");
     this.getArticlesByContentType(content_type);
   }
 
-  onSelect(article: Article): void {
-    this.selectedArticle = article;
+  ngOnInit() {
+    this.router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        const content_type = this.route.snapshot.paramMap.get("content");
+        this.getArticlesByContentType(content_type);
+      }
+    });
   }
 
   getArticlesByContentType(content_type: string): void {
     this.articlesService
       .getArticlesByContentType(content_type)
-      .subscribe((response:Pagination) => {
+      .subscribe((response: Pagination) => {
         this.articles = response.data;
       });
   }
@@ -48,5 +45,4 @@ export class ContentPostComponent implements OnInit {
   pageChanged($event: any): void {
     console.log($event);
   }
-
 }

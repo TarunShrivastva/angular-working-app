@@ -6,6 +6,9 @@ import { ArticlesService } from "../services/articles.service";
 @Component({
   selector: "header-app",
   templateUrl: "./header.component.html",
+  styles:[
+    ' a.disabled { pointer-events: none; cursor:default; }'
+  ]
 })
 export class HeaderComponent implements OnInit {
   filterParams: HttpParams = new HttpParams();

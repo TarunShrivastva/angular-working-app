@@ -12,11 +12,11 @@
 * {
     margin: 0;
     padding: 0; }
-  
+
   body {
     font-family: "Roboto", sans-serif;
     font-size: 14px; }
-  
+
   h1,
   h2,
   h3,
@@ -26,13 +26,13 @@
     color: #152535;
     line-height: 1.3;
     font-weight: 700; }
-  
+
   p {
     color: #828282;
     font-size: 14px;
     line-height: 2;
     font-weight: 400; }
-  
+
   a,
   a:hover,
   a:focus {
@@ -44,106 +44,106 @@
     font-weight: 500;
     font-size: 14px;
     color: #828282; }
-  
+
   ul,
   ol {
     margin: 0; }
     ul li,
     ol li {
       list-style: none; }
-  
+
   img {
     height: auto;
     max-width: 100%; }
-  
+
   /* Spacing */
   .mt-15 {
     margin-top: 15px !important; }
-  
+
   .mt-30 {
     margin-top: 30px !important; }
-  
+
   .mt-50 {
     margin-top: 50px !important; }
-  
+
   .mt-70 {
     margin-top: 70px !important; }
-  
+
   .mt-80 {
     margin-top: 80px !important; }
-  
+
   .mt-100 {
     margin-top: 100px !important; }
-  
+
   .mb-15 {
     margin-bottom: 15px !important; }
-  
+
   .mb-30 {
     margin-bottom: 30px !important; }
-  
+
   .mb-50 {
     margin-bottom: 50px !important; }
-  
+
   .mb-70 {
     margin-bottom: 70px !important; }
-  
+
   .mb-80 {
     margin-bottom: 80px !important; }
-  
+
   .mb-100 {
     margin-bottom: 100px !important; }
-  
+
   .ml-15 {
     margin-left: 15px !important; }
-  
+
   .ml-30 {
     margin-left: 30px !important; }
-  
+
   .ml-50 {
     margin-left: 50px !important; }
-  
+
   .mr-15 {
     margin-right: 15px !important; }
-  
+
   .mr-30 {
     margin-right: 30px !important; }
-  
+
   .mr-50 {
     margin-right: 50px !important; }
-  
+
   /* Height */
   .height-400 {
     height: 400px !important; }
-  
+
   .height-500 {
     height: 500px !important; }
-  
+
   .height-600 {
     height: 600px !important; }
-  
+
   .height-700 {
     height: 700px !important; }
-  
+
   .height-800 {
     height: 800px !important; }
-  
+
   /* Section Padding */
   .section-padding-80 {
     padding-top: 80px;
     padding-bottom: 80px; }
-  
+
   .section-padding-80-0 {
     padding-top: 80px;
     padding-bottom: 0; }
-  
+
   .section-padding-0-80 {
     padding-top: 0;
     padding-bottom: 80px; }
-  
+
   .section-padding-80-50 {
     padding-top: 80px;
     padding-bottom: 50px; }
-  
+
   /* Section Heading */
   .section-heading {
     position: relative;
@@ -162,28 +162,28 @@
       font-weight: 700;
       display: inline-block;
       text-align: center; }
-  
+
   /* Miscellaneous */
   .bg-img {
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat; }
-  
+
   .bg-white {
     background-color: #ffffff !important; }
-  
+
   .bg-dark {
     background-color: #000000 !important; }
-  
+
   .bg-transparent {
     background-color: transparent !important; }
-  
+
   .font-bold {
     font-weight: 700; }
-  
+
   .font-light {
     font-weight: 300; }
-  
+
   .bg-overlay {
     position: relative;
     z-index: 2;
@@ -198,7 +198,7 @@
       width: 100%;
       height: 100%;
       content: ""; }
-  
+
   .mfp-image-holder .mfp-close,
   .mfp-iframe-holder .mfp-close {
     color: #ffffff;
@@ -220,13 +220,13 @@
       .mfp-image-holder .mfp-close,
       .mfp-iframe-holder .mfp-close {
         right: 0; } }
-  
+
   input:focus,
   textarea:focus {
     outline: none;
     box-shadow: none;
     border-color: transparent; }
-  
+
   /* ScrollUp */
   #scrollUp {
     background-color: #ee002d;
@@ -248,7 +248,7 @@
       #scrollUp {
         bottom: 30px;
         right: 30px; } }
-  
+
   /* Button */
   .newspaper-btn {
     display: inline-block;
@@ -270,7 +270,7 @@
       font-weight: 700;
       color: #ffffff;
       background-color: #1c1c1c; }
-  
+
   /* :: 4.0 Header Area */
   .header-area {
     position: relative;
@@ -452,7 +452,7 @@
       @media only screen and (max-width: 767px) {
         .header-area .is-sticky #stickyMenu {
           background-color: #152535; } }
-  
+
   /* :: 5.0 Hero Area */
   .hero-area {
     position: relative;
@@ -509,7 +509,7 @@
               @media only screen and (max-width: 767px) {
                 .hero-area .breaking-news-area .ticker ul li a {
                   font-size: 12px; } }
-  
+
   .hero-add {
     position: relative;
     z-index: 1; }
@@ -521,7 +521,7 @@
       .hero-add {
         margin-top: 80px;
         text-align: center; } }
-  
+
   /* :: 6.0 Blog Post Area */
   .single-blog-post {
     position: relative;
@@ -674,12 +674,12 @@
       .single-blog-post.small-featured-post:last-child {
         padding-bottom: 0;
         border-bottom: none; }
-  
+
   @media only screen and (max-width: 767px) {
     .newspaper-post-like {
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; } }
-  
+
   .newspaper-tags {
     position: relative;
     z-index: 1;
@@ -703,7 +703,7 @@
       padding-right: 3px; }
       .newspaper-tags ul li a:hover, .newspaper-tags ul li a:focus {
         color: #ee002d; }
-  
+
   @media only screen and (max-width: 767px) {
     .post-like--comments {
       -webkit-box-flex: 0;
@@ -711,7 +711,7 @@
       flex: 0 0 100%;
       max-width: 100%;
       width: 100%; } }
-  
+
   .popular-news-widget {
     position: relative;
     z-index: 1;
@@ -752,7 +752,7 @@
         line-height: 1; }
       .popular-news-widget .single-popular-post:last-child {
         margin-bottom: 0; }
-  
+
   .latest-comments-widget {
     position: relative;
     z-index: 1;
@@ -798,7 +798,7 @@
         line-height: 1; }
       .latest-comments-widget .single-comments:last-child {
         margin-bottom: 0; }
-  
+
   .newsletter-widget {
     position: relative;
     z-index: 1;
@@ -835,7 +835,7 @@
         transition-duration: 500ms;
         background-color: #fff;
         color: #ee002d; }
-  
+
   .pagination {
     position: relative;
     z-index: 1; }
@@ -867,7 +867,7 @@
     .pagination .page-item:last-child .page-link {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0; }
-  
+
   .blog-post-author {
     position: relative;
     z-index: 1;
@@ -897,7 +897,7 @@
     .blog-post-author .author-info p {
       line-height: 2;
       margin-bottom: 0; }
-  
+
   .pager {
     position: relative;
     z-index: 1; }
@@ -918,7 +918,7 @@
         color: #fff; }
       .pager a i {
         font-size: 16px; }
-  
+
   .comment_area {
     border-bottom: 1px solid #d0d5d8;
     padding-bottom: 50px; }
@@ -960,7 +960,7 @@
     .comment_area .children .single_comment_area {
       margin-left: 50px;
       margin-top: 30px; }
-  
+
   .post-a-comment-area {
     position: relative;
     z-index: 1; }
@@ -968,18 +968,18 @@
       font-size: 24px;
       color: #393939;
       margin-bottom: 50px; }
-  
+
   .editors-pick-post-area {
     position: relative;
     z-index: 1;
     background-color: #eff4f9; }
-  
+
   /* :: 7.0 Video Post Area */
   .video-post-area {
     position: relative;
     z-index: 1;
     padding: 100px 0 70px; }
-  
+
   .single-video-post {
     position: relative;
     z-index: 1;
@@ -1013,7 +1013,7 @@
     .single-video-post:hover img {
       -webkit-transform: scale(1.2);
       transform: scale(1.2); }
-  
+
   /* :: 8.0 Footer Add Area */
   .footer-add-area {
     position: relative;
@@ -1023,7 +1023,7 @@
       display: block; }
       .footer-add-area .footer-add a img {
         width: 100%; }
-  
+
   /* :: 9.0 Footer Area */
   .footer-area {
     position: relative;
@@ -1062,7 +1062,7 @@
           color: rgba(255, 255, 255, 0.5); }
           .footer-area .bottom-footer-area p a:hover, .footer-area .bottom-footer-area p a:focus {
             color: #fff; }
-  
+
   /* :: 10.0 About Area */
   .about-area {
     position: relative;
@@ -1076,11 +1076,11 @@
           font-size: 30px; } }
     .about-area p {
       font-weight: 500; }
-  
+
   .single-cool-fact {
     position: relative;
     z-index: 1; }
-  
+
   .single-team-member {
     position: relative;
     z-index: 1; }
@@ -1095,7 +1095,7 @@
         margin-bottom: 0;
         font-size: 14px;
         color: #656565; }
-  
+
   /* :: 11.0 Cool Facts */
   .single-cool-fact {
     position: relative;
@@ -1117,7 +1117,7 @@
       .single-cool-fact .cf-text span {
         font-size: 12px;
         color: #656565; }
-  
+
   /* :: 12.0 Contact Area */
   .map-area {
     position: relative;
@@ -1132,7 +1132,7 @@
       @media only screen and (max-width: 767px) {
         .map-area #googleMap {
           height: 350px; } }
-  
+
   .single-contact-information {
     position: relative;
     z-index: 1; }
@@ -1141,7 +1141,7 @@
       border-bottom: 2px solid #ee002d;
       display: inline-block;
       color: #ee002d; }
-  
+
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .contact-form-area {
       margin-bottom: 80px; } }
@@ -1167,7 +1167,7 @@
     padding: 15px 20px;
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms; }
-  
+
   .contact-area {
     position: relative;
     z-index: 1; }
@@ -1178,5 +1178,5 @@
       @media only screen and (max-width: 767px) {
         .contact-area .contact-title h2 {
           font-size: 30px; } }
-  
+
   /*# sourceMappingURL=style.css.map */

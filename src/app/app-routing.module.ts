@@ -1,38 +1,34 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { CategoryMainComponent } from './category-main/category-main.component';
-import { ContentMainComponent } from './content-main/content-main.component';
-import { ArticleComponent } from './article/article.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { HomeComponent } from "./home/home.component";
+import { CategoryMainComponent } from "./category-main/category-main.component";
+import { ContentMainComponent } from "./content-main/content-main.component";
+import { ArticleComponent } from "./article/article.component";
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: ':content', component: ContentMainComponent },
-  { path: ':content/:category', component: CategoryMainComponent },
-  { path: ':content/:category/:sluged_title', component: ArticleComponent },
-  { path: '', redirectTo: '/', pathMatch: 'full' }
+  { path: "", component: HomeComponent },
+  {
+    path: ":content/:category/:sluged_title",
+    component: ArticleComponent,
+  },
+  {
+    path: ":content/:category",
+    component: CategoryMainComponent,
+  },
+  {
+    path: ":content",
+    component: ContentMainComponent,
+  },
+  {
+    path: "",
+    redirectTo: "/",
+    pathMatch: "full",
+  },
   // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
-
-// import { Routes } from '@angular/router'
-// import { EventsListComponent } from './events/event-list.component'
-// import { EventDetailsComponent } from './events/event-details/event-details.component'
-// import { CreateEventComponent } from './events/shared/create-event.component'
-// import { Error404Component } from './errors/404.component'
-// import { EventRouteActivator } from './events/event-details/event-route-activator.service'
-// import { EventListResolver } from './events/events-list-resolver.service'
-
-// export const appRoutes:Routes = [
-//     { path: 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent'] },
-//     { path: 'events', component: EventsListComponent, resolve: {events:EventListResolver} },
-//     { path: 'events/:id', component: EventDetailsComponent, canActivate: [EventRouteActivator] },
-//     { path: '404', component: Error404Component },
-//     { path: '', redirectTo: '/events', pathMatch: 'full' },
-//     { path: 'user', loadChildren: './user/user.module#UserModule'}
-// ]

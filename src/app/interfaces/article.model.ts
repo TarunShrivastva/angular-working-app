@@ -1,20 +1,20 @@
 export interface Article {
     id:number
-    title?:string
-    alias?:string
-    description?:string
-    author_id?:number
-    image?:string
-    content_id?:number
-    category_id?:number
-    language_id?:number
-    status?:number
-    recent?:number
-    feature?:number
-    popular?:number
-    how?:number
-    published?:number
-    created_at?:Date
-    updated_at?:Date
-    deleted_at?:Date
+    title:string
+    alias:string
+    description:string
+    author:string
+    image:string
+    content:string
+    category:string
+    language_id:number
+    language:string
+    status:number
+    recent:number
+    feature:number
+    popular:number
+    how:number
+    published:number
+    created_at:Date
+    updated_at:Date
 }

@@ -61,11 +61,11 @@
             <!-- Nav Start -->
             <div class="classynav">
               <ul>
-                <li *ngFor="let menu of menus" [ngClass]="{'cn-dropdown-item' : menus.length > 0}"><a
-                  [routerLink]="[menu.title]">{{ menu.title }}</a>
+                <li *ngFor="let menu of menus" routerLinkActive="active" [ngClass]="{'cn-dropdown-item' : menus.length > 0}"><a
+                  [routerLink]="menu.title === 'home'? '/':[menu.title]">{{ menu.title }}</a>
                   <ul *ngIf="menu.child_module.length > 0" class="dropdown">
                     <li *ngFor="let category of menu.child_module" [ngClass]="{'cn-dropdown-item' : menus.length > 0}">
-                      <a [routerLink]="category.child_child_module.length > 0? [menu.title] : [menu.title, category.title]">{{ category.title }}</a>
+                        <a [class.disabled]="category.child_child_module.length > 0 ? true : null" [routerLink]="[menu.title, category.title]">{{ category.title }}</a>
                       <ul *ngIf="category.child_child_module.length > 0" class="dropdown">
                         <li *ngFor="let subcategory of category.child_child_module"><a
                           [routerLink]="[menu.title, subcategory.title]">{{ subcategory.title }}</a></li>
