@@ -61,7 +61,7 @@
             <!-- Nav Start -->
             <div class="classynav">
               <ul>
-                <li *ngFor="let menu of menus" routerLinkActive="active" [ngClass]="{'cn-dropdown-item' : menus.length > 0}"><a
+                <li *ngFor="let menu of menus" [ngClass]="{'cn-dropdown-item' : menus.length > 0}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a
                   [routerLink]="menu.title === 'home'? '/':[menu.title]">{{ menu.title }}</a>
                   <ul *ngIf="menu.child_module.length > 0" class="dropdown">
                     <li *ngFor="let category of menu.child_module" [ngClass]="{'cn-dropdown-item' : menus.length > 0}">
