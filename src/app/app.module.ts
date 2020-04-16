@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { NgxPaginationModule } from "ngx-pagination";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -24,12 +24,15 @@ import { CommentComponent } from "./comment/comment.component";
 import { NewsletterComponent } from "./newsletter/newsletter.component";
 import { LatestSidePostComponent } from "./latest-side-post/latest-side-post.component";
 import { PopularSidePostComponent } from "./popular-side-post/popular-side-post.component";
-import { ContentPostComponent } from './content-main/content-post/content-post.component';
-import { ContentMainComponent } from './content-main/content-main.component';
-import { ArticleComponent } from './article/article.component';
-import { MainContentComponent } from './article/main-content/main-content.component';
-import { CommentListComponent } from './article/comment-list/comment-list.component';
-import { AddCommentComponent } from './article/add-comment/add-comment.component';
+import { ContentPostComponent } from "./content-main/content-post/content-post.component";
+import { ContentMainComponent } from "./content-main/content-main.component";
+import { ArticleComponent } from "./article/article.component";
+import { MainContentComponent } from "./article/main-content/main-content.component";
+import { CommentListComponent } from "./article/comment-list/comment-list.component";
+import { AddCommentComponent } from "./article/add-comment/add-comment.component";
+import { ArticleResolverService } from "./services/article-resolver.service";
+import { MainArticleResolverService } from "./services/main-article-resolver.service";
+import { ErrorIntercept } from './error/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -66,7 +69,15 @@ import { AddCommentComponent } from './article/add-comment/add-comment.component
     HttpClientModule,
     NgxPaginationModule,
   ],
-  providers: [],
+  providers: [
+    ArticleResolverService,
+    MainArticleResolverService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorIntercept,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

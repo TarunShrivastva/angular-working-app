@@ -11,7 +11,7 @@ import { Pagination } from 'src/app/interfaces/pagination.model';
 })
 export class FeatureComponent implements OnInit {
   articles: Article[];
-  p: number = 1;
+  p3: number = 1;
 
   constructor(
     private articlesService: ArticlesService,
@@ -29,7 +29,6 @@ export class FeatureComponent implements OnInit {
       .getArticlesFromFirstModule()
       .subscribe((response: Pagination) => {
         this.articles = response.data;
-        console.log(this.articles);
       });
   }
 }

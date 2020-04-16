@@ -37,80 +37,18 @@ export class ApiService {
     }
 
     get ( path: string, params: HttpParams = new HttpParams() ): Observable<any> {
-        return this.http.get( `${ this.apiUrl }${ path }`, { headers: this.headers, params } ).pipe(
-            catchError( this.formatErrors ),
-            map( ( res: HttpResponse<any> ) => res ),
-            finalize( () => {
-                this.onRequestEnded();
-            })
-        );
+        return this.http.get( `${ this.apiUrl }${ path }`, { headers: this.headers, params });
     }
 
     put ( path: string, body: Object = {},    ): Observable<any> {
-        return this.http.put( `${ this.apiUrl }${ path }`, JSON.stringify( body ), { headers: this.headers } ).pipe(
-            catchError( this.formatErrors ),
-            map( ( res: HttpResponse<any> ) => res ),
-            finalize( () => {
-                this.onRequestEnded();
-            } ) );
+        return this.http.put( `${ this.apiUrl }${ path }`, JSON.stringify( body ), { headers: this.headers });
     }
 
     post ( path: string, body: Object = {}, params: HttpParams = new HttpParams() ): Observable<any> {
-        return this.http.post( `${ this.apiUrl }${ path }`, JSON.stringify( body ), { headers: this.headers, params } ).pipe(
-            catchError( this.formatErrors ),
-            map( ( res: HttpResponse<any> ) => res ) );
+        return this.http.post( `${ this.apiUrl }${ path }`, JSON.stringify( body ), { headers: this.headers, params });
     }
 
     delete ( path, params: HttpParams =  new HttpParams() ): Observable<any> {
-        return this.http.delete( `${ this.apiUrl }${ path }`, { headers: this.headers, params } ).pipe(
-            catchError( this.formatErrors ),
-            map( ( res: HttpResponse<any> ) => res ) );
+        return this.http.delete( `${ this.apiUrl }${ path }`, { headers: this.headers, params });
     }
-
-    // get the paginated data
-    public getData ( page: Number ): any {
-        return this.http.get( `${ this.apiUrl }${ page }?token=${ this.token.getToken() }` ).pipe(
-            map( ( res: HttpResponse<any> ) => res ) );
-    }
-
-    onRequestStarted (): void {
-        // console.log('this.onRequestStarted()');
-    }
-
-    onRequestSuccess (): void {
-        // console.log('this.onRequestSuccess()');
-    }
-
-    onRequestFailed (): void {
-        // console.log('this.onRequestFailed()');
-    }
-
-    onRequestEnded (): void {
-        // console.log('this.onRequestEnded()');
-    }
-
-    getCnrDetails ( path: string, params: HttpParams = new HttpParams() ): Observable<any> {
-        return this.http.get( `${ this.firUrl }${ path }`, { headers: this.headers, params } ).pipe(
-            catchError( this.formatErrors ),
-            map( ( res: HttpResponse<any> ) => res ),
-            finalize( () => {
-                this.onRequestEnded();
-            } ) );
-    }
-
-    upload ( path: string, body: FormData ): Observable<any> {
-        return this.http.post( `${ this.apiUrl }${ path }`, body, { headers: this.uploadHeaders } ).pipe(
-            catchError( this.formatErrors ),
-            map( ( res: HttpResponse<any> ) => res ) );
-    }
-
-    private formatErrors ( error: any ) {
-        try {
-            return observableThrowError(error.json());
-        } catch ( error ) {
-            console.error( error );
-        }
-
-    }
-
 }

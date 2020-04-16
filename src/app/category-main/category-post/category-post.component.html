@@ -8,7 +8,7 @@
       <a href="#"><img src="{{ envService.imageUrl }}/{{ article.image }}" alt=""></a>
     </div>
     <div class="post-data">
-      <a href="#" class="post-catagory">{{ article.category }}</a>
+      <a [routerLink]="[ article.content | lowercase ]" class="post-catagory">{{ article.category }}</a>
       <a [routerLink]="[ article.alias ]" class="post-title">
         <h6>{{ article.title }}</h6>
       </a>

@@ -30,7 +30,6 @@ export class EditorialPostComponent implements OnInit {
       .getArticlesFromThirdModule()
       .subscribe((response: Pagination) => {
         this.articles = response.data;
-        console.log(this.articles);
       });
   }
 

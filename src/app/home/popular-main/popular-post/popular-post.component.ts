@@ -12,7 +12,7 @@ import { Pagination } from 'src/app/interfaces/pagination.model';
 
 export class PopularPostComponent implements OnInit {
   articles: Article[];
-  p: number = 1;
+  p2: number = 1;
 
   constructor(
     private articlesService: ArticlesService,
@@ -30,7 +30,6 @@ export class PopularPostComponent implements OnInit {
       .getArticlesFromSecondModule()
       .subscribe((response: Pagination) => {
         this.articles = response.data;
-        console.log(this.articles);
       });
   }
 }

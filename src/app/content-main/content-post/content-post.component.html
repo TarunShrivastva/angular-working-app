@@ -25,7 +25,7 @@
   </div>
 </div>
 
-<nav *ngIf="articles.length > 0" aria-label="Page navigation example">
+<nav aria-label="Page navigation example">
   <ul class="pagination mt-50">
     <li class="page-item">
       <pagination-controls class="{page-link : true}" (pageChange)="p = $event; pageChanged($event)">

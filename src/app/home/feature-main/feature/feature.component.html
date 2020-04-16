@@ -1,7 +1,7 @@
 <!-- Feature Left Section -->
 <!-- Single Featured Post -->
 <div class="row">
-  <div *ngFor="let article of articles | paginate: { itemsPerPage: 4, currentPage: p }" class="col-12 col-lg-5">
+  <div *ngFor="let article of articles | paginate: { id: 'feature', itemsPerPage: 4, currentPage: p3 }" class="col-12 col-lg-5">
     <div class="single-blog-post featured-post">
       <div class="post-thumb">
         <a href="#"><img src="{{ envService.imageUrl }}/{{ article.image }}" alt=""></a>
@@ -27,7 +27,7 @@
 <nav aria-label="Page navigation example">
   <ul class="pagination mt-50">
     <li class="page-item">
-      <pagination-controls class="{page-link : true}" (pageChange)="p = $event;">
+      <pagination-controls id='feature' class="{page-link : true}" (pageChange)="p3 = $event;">
       </pagination-controls>
     </li>
   </ul>

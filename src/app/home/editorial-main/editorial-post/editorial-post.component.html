@@ -4,7 +4,7 @@
 
 <div class="row">
     <!-- Single Post -->
-    <div *ngFor="let article of articles | paginate: { itemsPerPage: 6, currentPage: p }" class="col-12 col-lg-4">
+    <div *ngFor="let article of articles | paginate: { id: 'editorial', itemsPerPage: 6, currentPage: p }" class="col-12 col-lg-4">
         <div class="single-blog-post">
             <div class="post-thumb">
                 <a href="#"><img src="{{ envService.imageUrl }}/{{ article.image }}" alt=""></a>
@@ -24,7 +24,7 @@
 <nav aria-label="Page navigation example">
   <ul class="pagination mt-50">
     <li class="page-item">
-      <pagination-controls class="{page-link : true}" (pageChange)="p = $event;">
+      <pagination-controls id='editorial' class="{page-link : true}" (pageChange)="p = $event;">
       </pagination-controls>
     </li>
   </ul>

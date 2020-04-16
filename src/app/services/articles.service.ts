@@ -47,4 +47,12 @@ export class ArticlesService {
   getArticlesFromThirdModule(): Observable<Pagination> {
     return this.api.get("articles/third_module");
   }
+
+  getArticlesByPublishedFlag(): Observable<Pagination> {
+    return this.api.get("articles/published");
+  }
+
+  getArticlesByPopularFlag(): Observable<Pagination> {
+    return this.api.get("articles/popular");
+  }
 }
