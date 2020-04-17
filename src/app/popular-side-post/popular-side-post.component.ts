@@ -25,9 +25,15 @@ export class PopularSidePostComponent implements OnInit, Resolve<any> {
   }
 
   resolve() {
+    const content_type = this.activatedRoute.snapshot.paramMap.get("content");
     const category_type = this.activatedRoute.snapshot.paramMap.get("category");
-    if (category_type !== null) this.categoryCheck = false;
-    this.getArticlesByPopularFlag();
+    if (content_type !== null && category_type === null)
+      this.categoryCheck = false;
+
+    if (content_type !== null && category_type !== null)
+      this.categoryCheck = true;
+
+    return this.getArticlesByPopularFlag();
   }
 
   getArticlesByPopularFlag(): void {
@@ -35,7 +41,6 @@ export class PopularSidePostComponent implements OnInit, Resolve<any> {
       .getArticlesByPopularFlag()
       .subscribe((response: Pagination) => {
         this.articles = response.data;
-        console.log(this.articles);
       });
   }
 }

@@ -10,9 +10,9 @@ import { MainArticleResolverService } from './services/main-article-resolver.ser
 const routes: Routes = [
   { path: "", component: HomeComponent },
   {
-    path: ":content/:category/:sluged_title",
-    component: ArticleComponent,
-    resolve: { articles: MainArticleResolverService }
+    path: ":content",
+    component: ContentMainComponent,
+    resolve: { articles: ArticleResolverService }
   },
   {
     path: ":content/:category",
@@ -20,9 +20,9 @@ const routes: Routes = [
     resolve: { articles: ArticleResolverService }
   },
   {
-    path: ":content",
-    component: ContentMainComponent,
-    resolve: { articles: ArticleResolverService }
+    path: ":content/:category/:sluged_title",
+    component: ArticleComponent,
+    resolve: { articles: MainArticleResolverService }
   },
   {
     path: "",

@@ -25,8 +25,14 @@ export class LatestSidePostComponent implements OnInit, Resolve<any> {
   }
 
   resolve() {
+    const content_type = this.activatedRoute.snapshot.paramMap.get("content");
     const category_type = this.activatedRoute.snapshot.paramMap.get("category");
-    if (category_type !== null) this.categoryCheck = false;
+    if (content_type !== null && category_type === null)
+      this.categoryCheck = false;
+
+    if (content_type !== null && category_type !== null)
+      this.categoryCheck = true;
+
     return this.getArticlesByPublishedFlag();
   }
 
