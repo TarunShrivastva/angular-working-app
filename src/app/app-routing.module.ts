@@ -6,9 +6,19 @@ import { ContentMainComponent } from "./content-main/content-main.component";
 import { ArticleComponent } from "./article/article.component";
 import { ArticleResolverService } from './services/article-resolver.service';
 import { MainArticleResolverService } from './services/main-article-resolver.service';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
+  {
+    path: "about",
+    component: AboutComponent
+  },
+  {
+    path: "contact",
+    component: ContactComponent
+  },
   {
     path: ":content",
     component: ContentMainComponent,
