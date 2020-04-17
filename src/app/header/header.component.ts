@@ -2,13 +2,12 @@ import { Component, OnInit } from "@angular/core";
 import { HttpParams } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { ArticlesService } from "../services/articles.service";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "header-app",
   templateUrl: "./header.component.html",
-  styles:[
-    ' a.disabled { pointer-events: none; cursor:default; }'
-  ]
+  styles: [" a.disabled { pointer-events: none; cursor:default; }"],
 })
 export class HeaderComponent implements OnInit {
   filterParams: HttpParams = new HttpParams();
@@ -17,8 +16,13 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     protected router: Router,
-    private articlesService: ArticlesService
-  ) {}
+    private articlesService: ArticlesService,
+    private translate: TranslateService
+  ) {
+    translate.addLangs(["en", "hi"]);
+    translate.setDefaultLang("en");
+  }
+
   ngOnInit(): void {
     this.getNavBarItems();
   }
@@ -27,5 +31,9 @@ export class HeaderComponent implements OnInit {
     this.articlesService.getNavBarItems().subscribe((response) => {
       this.menus = response.memuItems;
     });
+  }
+
+  switchLang(lang: string) {
+    this.translate.use(lang);
   }
 }

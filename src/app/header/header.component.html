@@ -61,19 +61,29 @@
             <!-- Nav Start -->
             <div class="classynav">
               <ul>
-                <li *ngFor="let menu of menus" [ngClass]="{'cn-dropdown-item' : menus.length > 0}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a
-                  [routerLink]="menu.title === 'home'? [''] :[menu.title]">{{ menu.title }}</a>
+                <li *ngFor="let menu of menus" [ngClass]="{'cn-dropdown-item' : menus.length > 0}"
+                  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a
+                    [routerLink]="menu.title === 'home'? [''] :[menu.title | lowercase ]">{{ menu.title }}</a>
                   <ul *ngIf="menu.child_module.length > 0" class="dropdown">
                     <li *ngFor="let category of menu.child_module" [ngClass]="{'cn-dropdown-item' : menus.length > 0}">
-                        <a [class.disabled]="category.child_child_module.length > 0 ? true : null" [routerLink]="[menu.title, category.title]">{{ category.title }}</a>
+                      <a [class.disabled]="category.child_child_module.length > 0 ? true : null"
+                        [routerLink]="[menu.title | lowercase, category.title | lowercase]">{{ category.title }}</a>
                       <ul *ngIf="category.child_child_module.length > 0" class="dropdown">
                         <li *ngFor="let subcategory of category.child_child_module"><a
-                          [routerLink]="[menu.title, subcategory.title]">{{ subcategory.title }}</a></li>
+                            [routerLink]="[menu.title | lowercase, subcategory.title | lowercase ]">{{ subcategory.title }}</a></li>
                       </ul>
                     </li>
                   </ul>
                 </li>
               </ul>
+              <span class="form-inline">
+                <select class="form-control" #selectedLang (change)="switchLang(selectedLang.value)">
+                  <option *ngFor="let language of translate.getLangs()" [value]="language"
+                    [selected]="language === translate.currentLang">
+                    {{ language }}
+                  </option>
+                </select>
+                </span>
             </div>
             <!-- Nav End -->
           </div>
