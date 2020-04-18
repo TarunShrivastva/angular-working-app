@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     protected router: Router,
     private articlesService: ArticlesService,
-    private translate: TranslateService
+    public translate: TranslateService
   ) {
     translate.addLangs(["en", "hi"]);
     translate.setDefaultLang("en");

@@ -70,7 +70,7 @@ import { ContactComponent } from './contact/contact.component';
     ContactComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
