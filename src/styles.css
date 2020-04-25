@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
 
-@import url(~bootstrap/dist/css/bootstrap.min.css);
-@import url(main/css/owl.carousel.min.css);
-@import url(main/css/animate.css);
-@import url(main/css/magnific-popup.css);
-@import url(main/css/font-awesome.min.css);
-@import url(main/css/custom-icon.css);
-@import url(main/css/classy-nav.min.css);
-@import url(main/css/nice-select.min.css);
+@import 'assets/css/owl.carousel.min.css';
+@import 'assets/css/animate.css';
+@import 'assets/css/magnific-popup.css';
+@import 'assets/css/font-awesome.min.css';
+@import 'assets/css/custom-icon.css';
+@import 'assets/css/classy-nav.min.css';
+@import 'assets/css/nice-select.min.css';
 
 * {
     margin: 0;
