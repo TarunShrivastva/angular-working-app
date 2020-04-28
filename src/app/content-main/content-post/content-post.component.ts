@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { ArticlesService } from "../../services/articles.service";
 import { Article } from "../../interfaces/article.model";
-import { Router, ActivatedRoute, NavigationEnd } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 import { EnvironmentService } from "src/app/common-services/environment.service";
 import { Pagination } from 'src/app/interfaces/pagination.model';
 

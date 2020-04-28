@@ -9,7 +9,7 @@
 :: 1.0 Import Fonts
 :: 3.0 Base CSS
 :: 4.0 Header Area
-:: 5.0 Hero Area 
+:: 5.0 Hero Area
 :: 6.0 Blog Post Area
 :: 7.0 Video Post Area
 :: 8.0 Footer Add Area
@@ -26,9 +26,10 @@
 @import url(css/animate.css);
 @import url(css/magnific-popup.css);
 @import url(css/font-awesome.min.css);
+@import url(css/nice-select.min.css);
 @import url(css/custom-icon.css);
 @import url(css/classy-nav.min.css);
-@import url(css/nice-select.min.css);
+
 /* :: 3.0 Base CSS */
 * {
   margin: 0;
