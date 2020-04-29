@@ -37,6 +37,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { JsonLdComponent } from './json-ld/json-ld.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { ContactComponent } from './contact/contact.component';
     AddCommentComponent,
     AboutComponent,
     ContactComponent,
+    JsonLdComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
