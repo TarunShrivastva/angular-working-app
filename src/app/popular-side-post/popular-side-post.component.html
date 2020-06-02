@@ -1,0 +1,12 @@
+<!-- Popular News Widget -->
+<div class="popular-news-widget mb-50">
+  <h3> {{ 'Most Popular News' | translate }}</h3>
+
+  <!-- Single Popular Blog -->
+  <div *ngFor="let article of articles;  let i = index"  class="single-popular-post">
+      <a [routerLink]="[ '/', article.content | lowercase, article.category | lowercase, article.alias | lowercase ]">
+          <h6><span>{{ i + 1 }}.</span> {{ article.title }}</h6>
+      </a>
+      <p>{{ article.created_at }}</p>
+  </div>
+</div>

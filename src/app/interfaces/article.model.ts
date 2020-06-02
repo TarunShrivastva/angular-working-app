@@ -3,11 +3,12 @@ export interface Article {
     title:string
     alias:string
     description:string
-    author_id:number
+    author:string
     image:string
-    content_id:number
-    category_id:number
+    content:string
+    category:string
     language_id:number
+    language:string
     status:number
     recent:number
     feature:number
@@ -16,5 +17,4 @@ export interface Article {
     published:number
     created_at:Date
     updated_at:Date
-    deleted_at:Date
 }

@@ -1,0 +1,32 @@
+<!-- Single Featured Post -->
+<div *ngFor="let article of articles" class="single-blog-post featured-post single-post">
+  <div class="post-thumb">
+    <a href="#"><img src="{{ envService.imageUrl }}/{{ article.image }}" alt=""></a>
+  </div>
+  <div class="post-data">
+    <a href="#" class="post-catagory">{{ article.category }}</a>
+    <a href="#" class="post-title">
+      <h6>{{ article.title }}</h6>
+    </a>
+    <div class="post-meta">
+      <p class="post-author">By <a href="#">{{ article.author }}</a></p>
+      <p> {{ article.description }} </p>
+      <div class="newspaper-post-like d-flex align-items-center justify-content-between">
+        <!-- Post Like & Post Comment -->
+        <div class="d-flex align-items-center post-like--comments">
+          <a href="#" class="post-like"><img src="assets/img/core-img/like.png" alt=""> <span>392</span></a>
+          <a href="#" class="post-comment"><img src="assets/img/core-img/chat.png" alt=""> <span>10</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="pager d-flex align-items-center justify-content-between">
+  <div class="prev">
+    <a href="#" class="active"><i class="fa fa-angle-left"></i> previous</a>
+  </div>
+  <div class="next">
+    <a href="#">Next <i class="fa fa-angle-right"></i></a>
+  </div>
+</div> -->

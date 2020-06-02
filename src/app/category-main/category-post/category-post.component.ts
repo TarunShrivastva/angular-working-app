@@ -1,31 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { ArticlesService } from '../../services/articles.service';
-import { Article } from '../../interfaces/article.model';
+import { Component, OnInit } from "@angular/core";
+import { Article } from "../../interfaces/article.model";
+import { ActivatedRoute } from "@angular/router";
+import { Pagination } from "src/app/interfaces/pagination.model";
+import { EnvironmentService } from "src/app/common-services/environment.service";
 
 @Component({
-  selector: 'category-post',
-  templateUrl: './category-post.component.html',
-  styleUrls: ['./category-post.component.css']
+  selector: "category-post",
+  templateUrl: "./category-post.component.html",
+  styleUrls: ["./category-post.component.css"],
 })
 export class CategoryPostComponent implements OnInit {
+  articles: Article[] = [];
+  p: number = 1;
 
-  selectedArticle: Article;
-
-  articles: Article[];
-
-  constructor(private ArticlesService: ArticlesService ) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private envService: EnvironmentService
+  ) {}
 
   ngOnInit() {
-    this.getArticles();
+    this.activatedRoute.data.subscribe((data: { articles: Pagination }) => {
+      this.articles = data.articles.data;
+    });
   }
 
-  onSelect(article: Article): void {
-    this.selectedArticle = article;
+  pageChanged($event: any): void {
+    console.log($event);
   }
-
-  getArticles(): void {
-    this.ArticlesService.getArticles()
-        .subscribe(articles => this.articles = articles);
-  }
-
 }
