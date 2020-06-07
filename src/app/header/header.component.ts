@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ArticlesService } from '../services/articles.service';
 import { TranslateService } from "@ngx-translate/core";
 import { DeviceDetectorService } from 'ngx-device-detector';
+
 @Component({
     selector: "header-app",
     templateUrl: "./header.component.html",
@@ -30,6 +31,10 @@ export class HeaderComponent implements OnInit {
   ) {
     translate.addLangs(["en", "hi"]);
     translate.setDefaultLang("en");
+
+    const isMobile = this.deviceService.isMobile();
+    const isTablet = this.deviceService.isTablet();
+    console.log(isMobile, isTablet);
   }
 
   ngOnInit(): void {
@@ -47,9 +52,7 @@ export class HeaderComponent implements OnInit {
   }
 
   clickEvent(value:number){
-    const isMobile = this.deviceService.isMobile();
-    const isTablet = this.deviceService.isTablet();
-    console.log(isMobile, isTablet);
+
     // this.status[0] = !this.status[0];
     // this.status[1] = !this.status[1];
   }

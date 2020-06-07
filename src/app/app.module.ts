@@ -38,7 +38,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { JsonLdComponent } from './json-ld/json-ld.component';
-
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 @NgModule({
   declarations: [
@@ -77,6 +77,7 @@ import { JsonLdComponent } from './json-ld/json-ld.component';
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
+    DeviceDetectorModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
