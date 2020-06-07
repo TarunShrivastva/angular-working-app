@@ -12,7 +12,7 @@ export class ApiService {
 
     constructor(
         private http: HttpClient,
-        private envService: EnvironmentService,
+        public envService: EnvironmentService,
         private token: TokenService
     ) { }
 
