@@ -3,20 +3,30 @@ import { HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ArticlesService } from '../services/articles.service';
 import { TranslateService } from "@ngx-translate/core";
+import { DeviceDetectorService } from 'ngx-device-detector';
 @Component({
     selector: "header-app",
-    templateUrl: "./header.component.html"
+    templateUrl: "./header.component.html",
+    styles: [`
+    .show {
+      display: block;
+    },
+    .hide {
+      display: none;
+    }`]
 })
 
 export class HeaderComponent implements OnInit {
   filterParams: HttpParams = new HttpParams();
   menus: object;
   articles: any;
+  status: boolean[] = [false, false];
 
   constructor(
     protected router: Router,
     private articlesService: ArticlesService,
-    public translate: TranslateService
+    public translate: TranslateService,
+    private deviceService: DeviceDetectorService
   ) {
     translate.addLangs(["en", "hi"]);
     translate.setDefaultLang("en");
@@ -36,4 +46,11 @@ export class HeaderComponent implements OnInit {
     this.translate.use(lang);
   }
 
+  clickEvent(value:number){
+    const isMobile = this.deviceService.isMobile();
+    const isTablet = this.deviceService.isTablet();
+    console.log(isMobile, isTablet);
+    // this.status[0] = !this.status[0];
+    // this.status[1] = !this.status[1];
+  }
 }

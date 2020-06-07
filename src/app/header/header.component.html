@@ -60,39 +60,53 @@
 
                         <!-- Nav Start -->
                         <div class="classynav">
+                          <!-- <ul>
+                              <li class="active"><a href="#">Pages</a>
+                                  <ul class="dropdown">
+                                      <li>
+                                        <a href="#">Dropdown</a>
+                                          <ul class="dropdown">
+                                              <li>
+                                                <a href="index.html">Home</a>
+                                              </li>
+                                          </ul>
+                                      </li>
+                                  </ul>
+                              </li>
+                          </ul> -->
+                          <!-- <ul>
+                            <li *ngFor="let menu of menus" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                              <a [routerLink]="menu.title === 'home'? [''] :[menu.title | lowercase ]">{{ menu.title }}</a>
+                                <ul *ngIf="menu.child_module.length > 0" class="dropdown">
+                                  <li *ngFor="let category of menu.child_module">
+                                    <a [class.disabled]="category.child_child_module.length > 0 ? true : null" [routerLink]="[menu.title | lowercase, category.title | lowercase]">{{ category.title }}</a>
+                                      <ul *ngIf="category.child_child_module.length > 0" class="dropdown">
+                                        <li *ngFor="let subcategory of category.child_child_module">
+                                            <a [routerLink]="[menu.title | lowercase, subcategory.title | lowercase ]">{{ subcategory.title }}</a>
+                                        </li>
+                                      </ul>
+                                  </li>
+                                </ul>
+                            </li>
+                          </ul> -->
 <ul>
-  <li *ngFor="let menu of menus" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-    <a [routerLink]="menu.title === 'home'? [''] :[menu.title | lowercase ]">{{ menu.title }}</a>
-      <ul *ngIf="menu.child_module.length > 0" [ngClass]="{'dropdown': menu.child_module.length > 0}">
-        <li *ngFor="let category of menu.child_module">
-          <a [class.disabled]="category.child_child_module.length > 0 ? true : null"
-            [routerLink]="[menu.title | lowercase, category.title | lowercase]">{{ category.title }}</a>
-            <ul *ngIf="category.child_child_module.length > 0" class="dropdown">
-              <li *ngFor="let subcategory of category.child_child_module"><a
-                  [routerLink]="[menu.title | lowercase, subcategory.title | lowercase ]">{{ subcategory.title }}</a>
-              </li>
-            </ul>
-        </li>
-      </ul>
+  <li *ngFor="let menu of menus;let i=index" [ngClass]="{'cn-dropdown-item': menus.length > 0, 'has-down': menu.child_module.length > 0}" routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }">
+      <a [routerLink]="menu.title === 'home'? [''] :[menu.title | lowercase ]">{{ menu.title }}</a>
+    <ul *ngIf="menu.child_module.length > 0" class="dropdown">
+      <li *ngFor="let category of menu.child_module" [ngClass]="{'cn-dropdown-item': menus.length > 0, 'has-down': category.child_child_module.length > 0}">
+        <a [class.disabled]="category.child_child_module.length > 0 ? true : null" [routerLink]="[menu.title | lowercase, category.title | lowercase]">
+          {{ category.title }}
+        </a>
+        <ul *ngIf="category.child_child_module.length > 0" class="dropdown">
+          <li *ngFor="let subcategory of category.child_child_module"><a
+              [routerLink]="[menu.title | lowercase, subcategory.title | lowercase ]">{{ subcategory.title }}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </li>
 </ul>
-
-
-                            <!-- <ul>
-                                <li class="active"><a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li>
-                                          <a href="#">Dropdown</a>
-                                            <ul class="dropdown">
-                                                <li>
-                                                  <a href="index.html">Home</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul> -->
-
                         </div>
                         <!-- Nav End -->
                     </div>
