@@ -1,118 +1,92 @@
 <!-- ##### Header Area Start ##### -->
 <header class="header-area">
 
-    <!-- Top Header Area -->
-    <div class="top-header-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="top-header-content d-flex align-items-center justify-content-between">
-                        <!-- Logo -->
-                        <div class="logo">
-                            <a href="index.html"><img src="assets/img/core-img/logo.png" alt=""></a>
-                        </div>
-
-                        <!-- Login Search Area -->
-                        <div class="login-search-area d-flex align-items-center">
-                            <!-- Login -->
-                            <div class="login d-flex">
-                                <a href="#">Login</a>
-                                <a href="#">Register</a>
-                            </div>
-                            <!-- Search Form -->
-                            <div class="search-form">
-                                <form action="#" method="post">
-                                    <input type="search" name="search" class="form-control" placeholder="Search">
-                                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <!-- Top Header Area -->
+  <div class="top-header-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="top-header-content d-flex align-items-center justify-content-between">
+            <!-- Logo -->
+            <div class="logo">
+              <a href="index.html"><img src="assets/img/core-img/logo.png" alt=""></a>
             </div>
-        </div>
-    </div>
 
-    <!-- Navbar Area -->
-    <div class="newspaper-main-menu" id="stickyMenu">
-        <div class="classy-nav-container breakpoint-off">
-            <div class="container">
-                <!-- Menu -->
-                <nav class="classy-navbar justify-content-between" id="newspaperNav">
-
-                    <!-- Logo -->
-                    <div class="logo">
-                        <a href="index.html"><img src="assets/img/core-img/logo.png" alt=""></a>
-                    </div>
-
-                    <!-- Navbar Toggler -->
-                    <div class="classy-navbar-toggler">
-                        <span class="navbarToggler"><span></span><span></span><span></span></span>
-                    </div>
-
-                    <!-- Menu -->
-                    <div class="classy-menu">
-
-                        <!-- close btn -->
-                        <div class="classycloseIcon">
-                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                        </div>
-
-                        <!-- Nav Start -->
-                        <div class="classynav">
-                          <!-- <ul>
-                              <li class="active"><a href="#">Pages</a>
-                                  <ul class="dropdown">
-                                      <li>
-                                        <a href="#">Dropdown</a>
-                                          <ul class="dropdown">
-                                              <li>
-                                                <a href="index.html">Home</a>
-                                              </li>
-                                          </ul>
-                                      </li>
-                                  </ul>
-                              </li>
-                          </ul> -->
-                          <!-- <ul>
-                            <li *ngFor="let menu of menus" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                              <a [routerLink]="menu.title === 'home'? [''] :[menu.title | lowercase ]">{{ menu.title }}</a>
-                                <ul *ngIf="menu.child_module.length > 0" class="dropdown">
-                                  <li *ngFor="let category of menu.child_module">
-                                    <a [class.disabled]="category.child_child_module.length > 0 ? true : null" [routerLink]="[menu.title | lowercase, category.title | lowercase]">{{ category.title }}</a>
-                                      <ul *ngIf="category.child_child_module.length > 0" class="dropdown">
-                                        <li *ngFor="let subcategory of category.child_child_module">
-                                            <a [routerLink]="[menu.title | lowercase, subcategory.title | lowercase ]">{{ subcategory.title }}</a>
-                                        </li>
-                                      </ul>
-                                  </li>
-                                </ul>
-                            </li>
-                          </ul> -->
-<ul>
-  <li *ngFor="let menu of menus;let i=index" [ngClass]="{'cn-dropdown-item': menus.length > 0, 'has-down': menu.child_module.length > 0}" routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }">
-      <a [routerLink]="menu.title === 'home'? [''] :[menu.title | lowercase ]">{{ menu.title }}</a>
-    <ul *ngIf="menu.child_module.length > 0" class="dropdown">
-      <li *ngFor="let category of menu.child_module" [ngClass]="{'cn-dropdown-item': menus.length > 0, 'has-down': category.child_child_module.length > 0}">
-        <a [class.disabled]="category.child_child_module.length > 0 ? true : null" [routerLink]="[menu.title | lowercase, category.title | lowercase]">
-          {{ category.title }}
-        </a>
-        <ul *ngIf="category.child_child_module.length > 0" class="dropdown">
-          <li *ngFor="let subcategory of category.child_child_module"><a
-              [routerLink]="[menu.title | lowercase, subcategory.title | lowercase ]">{{ subcategory.title }}</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-                        </div>
-                        <!-- Nav End -->
-                    </div>
-                </nav>
+            <!-- Login Search Area -->
+            <div class="login-search-area d-flex align-items-center">
+              <!-- Login -->
+              <div class="login d-flex">
+                <a href="#">Login</a>
+                <a href="#">Register</a>
+              </div>
+              <!-- Search Form -->
+              <div class="search-form">
+                <form action="#" method="post">
+                  <input type="search" name="search" class="form-control" placeholder="Search">
+                  <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Navbar Area -->
+  <div class="newspaper-main-menu" id="stickyMenu">
+    <div class="classy-nav-container breakpoint-off">
+      <div class="container">
+        <!-- Menu -->
+        <nav class="classy-navbar justify-content-between" id="newspaperNav">
+
+          <!-- Logo -->
+          <div class="logo">
+            <a href="index.html"><img src="assets/img/core-img/logo.png" alt=""></a>
+          </div>
+
+          <!-- Navbar Toggler -->
+          <div class="classy-navbar-toggler">
+            <span class="navbarToggler"><span></span><span></span><span></span></span>
+          </div>
+
+          <!-- Menu -->
+          <div class="classy-menu">
+
+            <!-- close btn -->
+            <div class="classycloseIcon">
+              <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+            </div>
+
+            <!-- Nav Start -->
+            <div class="classynav">
+              <ul>
+                <li *ngFor="let menu of menus"
+                  [ngClass]="{'cn-dropdown-item': menus.length > 0, 'has-down': menu.child_module.length > 0}"
+                  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                  <a [routerLink]="menu.title === 'home'? [''] :[menu.title | lowercase ]">{{ menu.title }}</a>
+                  <ul *ngIf="menu.child_module.length > 0;" class="dropdown">
+                    <li *ngFor="let category of menu.child_module"
+                      [ngClass]="{'cn-dropdown-item': menus.length > 0, 'has-down': category.child_child_module.length > 0}">
+                      <a [class.disabled]="category.child_child_module.length > 0 ? true : null"
+                        [routerLink]="[menu.title | lowercase, category.title | lowercase]">
+                        {{ category.title }}
+                      </a>
+                      <ul *ngIf="category.child_child_module.length > 0" class="dropdown">
+                        <li *ngFor="let subcategory of category.child_child_module"><a
+                            [routerLink]="[menu.title | lowercase, subcategory.title | lowercase ]">{{ subcategory.title }}</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <!-- Nav End -->
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
 </header>
 <!-- ##### Header Area End ##### -->

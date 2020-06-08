@@ -6,9 +6,9 @@ import { TranslateService } from "@ngx-translate/core";
 import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
-    selector: "header-app",
-    templateUrl: "./header.component.html",
-    styles: [`
+  selector: "header-app",
+  templateUrl: "./header.component.html",
+  styles: [`
     .show {
       display: block;
     },
@@ -51,9 +51,8 @@ export class HeaderComponent implements OnInit {
     this.translate.use(lang);
   }
 
-  clickEvent(value:number){
-
-    // this.status[0] = !this.status[0];
-    // this.status[1] = !this.status[1];
+  clickEvent() {
+    this.status[0] = !this.status[0];
+    this.status[1] = !this.status[1];
   }
 }
