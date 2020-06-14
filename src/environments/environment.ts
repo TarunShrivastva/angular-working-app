@@ -5,9 +5,9 @@
 export const environment = {
   production: false,
   api_url: 'http://localhost:8000/api/v1/',
-  crm_url: 'http://localhost:8000/',
-  socket_url: 'http://crm.instaveritas.app.test:3300',
-  fir_url: 'http://crm.test/api/',
+  crm_url: '',
+  socket_url: '',
+  fir_url: '',
   url: 'http://localhost:4200',
   image: 'http://localhost:8000/upload/',
 };
